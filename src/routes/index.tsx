@@ -54,7 +54,7 @@ function Index() {
     const nodes = document.querySelectorAll<HTMLElement>("[data-event-year]");
     const observer = new IntersectionObserver((entries) => {
       const top = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-      if (top) setActiveYear(Number((top.target as HTMLElement).dataset.eventYear));
+      if (top) setActiveYear(Number((top.target as HTMLElement).dataset["eventYear"]));
     }, { rootMargin: "-30% 0px -55%" });
     nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
