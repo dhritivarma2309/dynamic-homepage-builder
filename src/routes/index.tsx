@@ -38,7 +38,7 @@ const events = [
   { id: "serena-2015", year: 2015, era: "modern" as Era, title: "A second Serena Slam", summary: "Serena Williams holds all four major singles titles at once for the second time, defining the archive’s modern endpoint.", categories: ["match", "rivalry"] as Category[], source: "Women’s Tennis Association" },
 ];
 
-const guidedIds = new Set(["wimbledon-1877", "open-era-1968", "equal-prize-1973", "graphite-1981", "yellow-ball-1986", "hawk-eye-2006", "equal-prize-2007", "roof-2009", "serena-2015"]);
+const guidedIds = new Set(events.map((event) => event.id));
 
 function Index() {
   const [mode, setMode] = useState<"guided" | "full">("guided");
